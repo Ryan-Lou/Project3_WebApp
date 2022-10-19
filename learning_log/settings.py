@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third party apps
-    'bootstrap3',
+    'bootstrap4',
     
     # My apps
     'learning_logs',
@@ -130,13 +130,16 @@ STATIC_URL = '/static/'
 LOGIN_URL = '/users/login/'
 LOGOUT_REDIRECT_URL = '/'
 
-# Settings for django-bootstrap3
-BOOTSTRAP3 = {
+# Settings for django-bootstrap4
+BOOTSTRAP4 = {
     'include_jquery': True,
     }
 
 
 # Heroku settings
+
+import django_heroku
+django_heroku.settings(locals())
 cwd = os.getcwd()
 if cwd == '/app' or cwd[:4] == '/tmp':
     import dj_database_url
